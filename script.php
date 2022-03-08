@@ -32,23 +32,25 @@
             <tr>
                 <?php
                 $j = $_POST["nav"];
+                // j pends la valeur de la requête (soit 128512)
                 for ($i = 1; $i <= 256; $i++) {
-                    echo "<td>&#";
-                    echo $j . "</td>";
+                    echo '<td>&#'.$j . '</td>'; //pour chaque emojis, on crée un <td>EMOJI</td> (entrée dans le tableau)
                     $j++;
                     if ($i % 16 == 0 && $i != 0) {
-                        echo "</tr> <tr>";
+                        echo '</tr> <tr>'; //quand on arrive à 16 caractères, on change de ligne
                     }
-                    if ($i == 256) {
+                    elseif ($i == 256) {
                         echo "</tr>";
-                        break;
+                        break; //on ferme le tableau à 256 emojis
                     }
                 }
-                echo '</tbody></table><div class="center"><form method="post">
-                        <button class="button-30" name="nav" value="' . $j;
-                echo '"type="submit">Previous page</button>
-                        <button class="button-30" name="nav" value="' . $j - 512
-                    . '"type="submit">Next page</button>';
+                echo '</tbody>
+                    </table>
+                    <div class="center">
+                        <form method="post">
+                            <button class="button-30" name="nav" value="'.($j-512).'"type="submit">Previous page</button>
+                            <button class="button-30" name="nav" value="' . ($j).'"type="submit">Next page</button>';
+                //les boutons
                 ?>
                 </div>
                 <div class="center">
