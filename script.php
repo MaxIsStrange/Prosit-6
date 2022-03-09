@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Emoji list</title>
 </head>
 
 <body>
@@ -17,12 +17,80 @@
 <html>
 
 
-<header center>
-    <h1>Mettons des émojis</h1>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Emoji List</title>
+  </head>
+</html>
+<html>
+  <header>
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://www.hsbay.space">
+          <img src="favico.png" class="image is-rounded ">
+        </a>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu" >
+        <div class="navbar-start">
+          <a class="navbar-item" href="https://www.hsbay.space">
+            Home
+          </a>
+    
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About
+              </a>
+              <a class="navbar-item">
+                Jobs
+              </a>
+              <a class="navbar-item">
+                Contact
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                Report an issue
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light">
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <h1 class="title is-1 has-text-centered">
+          EMOJI LIST
+        </h1>
+  </header>
 
 <body>
-    <table>
+    <table class="has-text-centered is-centered">
         <thead>
             <tr>
                 <th colspan="16">Emojis</th>
@@ -46,15 +114,17 @@
                 }
                 echo '</tbody>
                     </table>
-                    <div class="center">
+                    <div class="has-text-centered">
                         <form method="post">
-                            <button class="button-30" name="nav" value="'.($j-512).'"type="submit">Previous page</button>
-                            <button class="button-30" name="nav" value="' . ($j).'"type="submit">Next page</button>';
-                //les boutons
+                            <button class="button is-primary is-centered" name="nav" value="'.($j-512).'"type="submit">Previous page</button>
+                            <button class="button is-primary is-centered" name="nav" value="' . ($j).'"type="submit">Next page</button>';
+                //les boutons Previous et next sont des requêtes sur cette même page, previous 512 caractères avant le j final (soit 256 avant la première requête)
+                //et next directement à la suite du j final pour afficher 256 après la première requête.
                 ?>
                 </div>
-                <div class="center">
-                    <button type="submit" class="button-30" name="nav" value="128512">Home Page</button>
+                <div class="has-text-centered">
+                    <button type="submit" class="button is-primary is-centered" name="nav" value="128512">Home Page</button>
+                    <!-- retour à la page de base -->
                 </div>
                 </form>
 
