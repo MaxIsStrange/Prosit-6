@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <title>Emoji List</title>
+  <link rel="manifest" href="manifest.webmanifest">
 </head>
 
 </html>
@@ -73,65 +74,72 @@
 </header>
 
 <body class="content">
-  <table class="has-text-centered is-centered">
-    <thead>
-      <tr>
-        <th colspan="16">Emojis</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <?php
-        $j = $_POST["nav"];
-        // j pends la valeur de la requête (soit 128512)
-        for ($i = 1; $i <= 256; $i++) {
-          echo '<td>&#' . $j . '</td>'; //pour chaque emojis, on crée un <td>EMOJI</td> (entrée dans le tableau)
-          $j++;
-          if ($i % 16 == 0 && $i != 0) {
-            echo '</tr> <tr>'; //quand on arrive à 16 caractères, on change de ligne
-          } elseif ($i == 256) {
-            echo "</tr>";
-            break; //on ferme le tableau à 256 emojis
+  <div class="columns is-centered">
+    <div class="column is-three-fifths ">
+    <table class="table is-narrow has-text-centered is-striped">
+      <thead>
+        <tr class="is-selected">
+          <th colspan="16">Emojis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <?php
+          $j = $_POST["nav"];
+          // j pends la valeur de la requête (soit 128512)
+          for ($i = 1; $i <= 256; $i++) {
+            echo '<td>&#' . $j . '</td>'; //pour chaque emojis, on crée un <td>EMOJI</td> (entrée dans le tableau)
+            $j++;
+            if ($i % 16 == 0 && $i != 0) {
+              echo '</tr> <tr>'; //quand on arrive à 16 caractères, on change de ligne
+            } elseif ($i == 256) {
+              echo "</tr>";
+              break; //on ferme le tableau à 256 emojis
+            }
           }
-        }
-        echo '</tbody>
+          echo '</tbody>
                     </table>
+                    </div>
+                    </div>
                     <div class="has-text-centered">
                         <form method="post">
                             <button class="button is-primary is-centered" name="nav" value="' . ($j - 512) . '"type="submit">Previous page</button>
                             <button class="button is-primary is-centered" name="nav" value="' . ($j) . '"type="submit">Next page</button>';
-        //les boutons Previous et next sont des requêtes sur cette même page, previous 512 caractères avant le j final (soit 256 avant la première requête)
-        //et next directement à la suite du j final pour afficher 256 après la première requête.
-        ?>
+          //les boutons Previous et next sont des requêtes sur cette même page, previous 512 caractères avant le j final (soit 256 avant la première requête)
+          //et next directement à la suite du j final pour afficher 256 après la première requête.
+          ?>
         </div>
-        <div class="has-text-centered">
-          <button type="submit" class="button is-primary is-centered" name="nav" value="128512">Home Page</button>
-          <!-- retour à la page de base -->
-        </div>
-        </form>
+  </div>
+  
+    
+  <div class="has-text-centered">
+    <button type="submit" class="button is-primary is-centered" name="nav" value="128512">Home Page</button>
+    <!-- retour à la page de base -->
+  </div>
+  </form>
 
-        <footer class="footer">
-          <div class="columns">
-            <div class="column">
-              <a href="leg/ccv.html" class="button">Conditions générales de vente</a>
-              <br>
-              <br>
-              Merci pour vos cookies
-              <br>
-              <a href="leg/refCookies.html " class="button">Je refuse</a>
-            </div>
-            <div class="column has-text-right">
-              <ul>
-                <li>NOM ENTREPRISE</li>
-                <li>N° 56965456789876545678 au RCS</li>
-                <li>contact@entreprise.com</li>
-                <li>7809 Rue des boulevards, 16000 Angoulême</li>
-                <li>N° 5678987654 a la TVA</li>
-                <li>Autorisé par XXXXXXXX</li>
-              </ul>
-            </div>
-          </div>
-        </footer>
+  <footer class="footer">
+    <div class="columns">
+      <div class="column">
+        <a href="leg/ccv.html" class="button">Conditions générales de vente</a>
+        <br>
+        <br>
+        Merci pour vos cookies
+        <br>
+        <a href="leg/refCookies.html " class="button">Je refuse</a>
+      </div>
+      <div class="column has-text-right">
+        <ul>
+          <li>NOM ENTREPRISE</li>
+          <li>N° 56965456789876545678 au RCS</li>
+          <li>contact@entreprise.com</li>
+          <li>7809 Rue des boulevards, 16000 Angoulême</li>
+          <li>N° 5678987654 a la TVA</li>
+          <li>Autorisé par XXXXXXXX</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
