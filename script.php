@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <title>Emoji List</title>
-  <link rel="manifest" href="manifest.webmanifest">
 </head>
 
 </html>
@@ -75,14 +74,14 @@
 
 <body class="content">
   <div class="columns is-centered">
-    <div class="column is-three-fifths ">
-    <table class="table is-narrow has-text-centered is-striped">
+    <div class="column is-three-fifths">
+    <table class="table is-responsive is-narrow has-text-centered is-striped">
       <thead>
-        <tr class="is-selected">
+        <tr class="is-selected is-size-7-mobile">
           <th colspan="16">Emojis</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="is-size-7-mobile">
         <tr>
           <?php
           $j = $_POST["nav"];
@@ -110,8 +109,8 @@
           ?>
         </div>
   </div>
-  
-    
+
+
   <div class="has-text-centered">
     <button type="submit" class="button is-primary is-centered" name="nav" value="128512">Home Page</button>
     <!-- retour à la page de base -->
@@ -120,7 +119,7 @@
 
   <footer class="footer">
     <div class="columns">
-      <div class="column">
+      <div class="column has-text-left-mobile">
         <a href="leg/ccv.html" class="button">Conditions générales de vente</a>
         <br>
         <br>
@@ -128,7 +127,7 @@
         <br>
         <a href="leg/refCookies.html " class="button">Je refuse</a>
       </div>
-      <div class="column has-text-right">
+      <div class="column has-text-right has-text-left-mobile">
         <ul>
           <li>NOM ENTREPRISE</li>
           <li>N° 56965456789876545678 au RCS</li>
